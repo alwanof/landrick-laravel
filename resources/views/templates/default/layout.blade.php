@@ -13,35 +13,35 @@
     <meta name="Version" content="v3.2.0" />
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="/themo/public/front/default/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('front/default/images/favicon.ico') }}">
 
     <!-- Bootstrap -->
-    <link href="/themo/public/front/default/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('front/default/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- tobii css -->
-    <link href="/themo/public/front/default/css/tobii.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('front/default/css/tobii.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Icons -->
-    <link href="/themo/public/front/default/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('front/default/css/materialdesignicons.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <!-- Slider -->
-    <link rel="stylesheet" href="/themo/public/front/default/css/tiny-slider.css" />
+    <link rel="stylesheet" href="{{ asset('front/default/css/tiny-slider.css') }}" />
     <!-- Main css -->
     @if ($lang == 'ar')
         @if ($data['generalSettings']['dark'])
-            <link href="/themo/public/front/default/css/style-dark-rtl.css" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('front/default/css/style-dark-rtl.css') }}" rel="stylesheet" type="text/css" />
         @else
-            <link href="/themo/public/front/default/css/style-rtl.css" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('front/default/css/style-rtl.css') }}" rel="stylesheet" type="text/css" />
         @endif
 
     @else
         @if ($data['generalSettings']['dark'])
-            <link href="/themo/public/front/default/css/style-dark.css" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('front/default/css/style-dark.css') }}" rel="stylesheet" type="text/css" />
         @else
-            <link href="/themo/public/front/default/css/style.css" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('front/default/css/style.css') }}" rel="stylesheet" type="text/css" />
         @endif
 
     @endif
 
-    <link href="/themo/public/front/default/css/colors/{{ $data['generalSettings']['color'] }}.css" rel="stylesheet"
+    <link href="{{ asset('front/default/css/colors/' . $data['generalSettings']['color'] . '.css') }}" rel="stylesheet"
         id="color-opt" />
 
 
@@ -99,7 +99,8 @@
                             <li><a href="{{ $nav['link'] }}" class="sub-menu-item">{{ $nav['caption'] }}</a></li>
                         @else
                             <li class="has-submenu parent-menu-item">
-                                <a href="javascript:void(0)">{{ $nav['caption'] }}</a><span class="menu-arrow"></span>
+                                <a href="javascript:void(0)">{{ $nav['caption'] }}</a><span
+                                    class="menu-arrow"></span>
                                 <ul class="submenu">
                                     @foreach ($nav['subItems'] as $subNav)
                                         <li><a href="{{ $subNav['link'] }}"
@@ -191,17 +192,17 @@
             data-feather="arrow-up" class="icons"></i></a>
     <!-- Back to top -->
     <!-- Javascript Start -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('front/default/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('front/default/js/bootstrap.bundle.min.js') }}"></script>
     <!-- SLIDER -->
-    <script src="/themo/public/front/default/js/tiny-slider.js "></script>
+    <script src="{{ asset('front/default/js/tiny-slider.js') }} "></script>
     <!-- tobii js -->
-    <script src="/themo/public/front/default/js/tobii.min.js "></script>
+    <script src="{{ asset('front/default/js/tobii.min.js') }} "></script>
     <!-- Icons -->
-    <script src="/themo/public/front/default/js/feather.min.js"></script>
+    <script src="{{ asset('front/default/js/feather.min.js') }}"></script>
     <!-- Main Js -->
-    <script src="/themo/public/front/default/js/plugins.init.js"></script>
-    <script src="/themo/public/front/default/js/app.js"></script>
+    <script src="{{ asset('front/default/js/plugins.init.js') }}"></script>
+    <script src="{{ asset('front/default/js/app.js') }}"></script>
     @yield('js')
     <!-- Javascript End -->
 </body>
